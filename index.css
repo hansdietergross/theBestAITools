@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
+
+body {
+    /* Base colors */
+    --color-green: #01c3a8;
+    --color-orange: #ffb741;
+    --color-red: #a63d2a;
+    --color-blue: #1890ff;
+    --color-purple: #8A2BE2;
+    --color-rose: #FF69B4;
+    --color-gold: #FFD700;
+    --color-silver: #C0C0C0;
+
+    /* Gradients for each color */
+    --gradient-green: radial-gradient(ellipse at right top, #107667ed 0%, #151419 47%, #151419 100%), linear-gradient(45deg, #232228, #232228, #232228, #232228, var(--color-green));
+    --gradient-orange: radial-gradient(ellipse at right top, #ffb74194 0%, #151419 47%, #151419 100%), linear-gradient(45deg, #232228, #232228, #232228, #232228, var(--color-orange));
+    --gradient-red: radial-gradient(ellipse at right top, #a63d2a82 0%, #151419 47%, #151419 100%), linear-gradient(45deg, #232228, #232228, #232228, #232228, var(--color-red));
+    --gradient-blue: radial-gradient(ellipse at right top, #00458f8f 0%, #151419 45%, #151419 100%), linear-gradient(45deg, #232228, #232228, #232228, #232228, var(--color-blue));
+    --gradient-purple: radial-gradient(ellipse at right top, #8A2BE280 0%, #151419 47%, #151419 100%), linear-gradient(45deg, #232228, #232228, #232228, #232228, var(--color-purple));
+    --gradient-rose: radial-gradient(ellipse at right top, #FF69B480 0%, #151419 47%, #151419 100%), linear-gradient(45deg, #232228, #232228, #232228, #232228, var(--color-rose));
+    --gradient-gold: radial-gradient(ellipse at right top, #FFD70080 0%, #151419 47%, #151419 100%), linear-gradient(45deg, #232228, #232228, #232228, #232228, var(--color-gold));
+    --gradient-silver: radial-gradient(ellipse at right top, #C0C0C080 0%, #151419 47%, #151419 100%), linear-gradient(45deg, #232228, #232228, #232228, #232228, var(--color-silver));
+
+    box-sizing: border-box;
+    min-height: 100vh;
+    font-family: "Nunito", sans-serif;
+    display: grid;
+    place-items: center;
+    background:
+        linear-gradient(45deg, #232228f7, #524f5ef7, #232228f0),
+        /* f7 am Ende = 97% Deckkraft */
+        url('wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.title {
+    color: #fff;
+    font-size: 70px;
+    text-align: center;
+    margin: 20px;
+    font-weight: 600;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.9);
+    font-family: 'Dancing Script', cursive;
+    /* https://codepen.io/linux/pen/aEQKWP */
+}
+
+.cards {
+    place-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 80px 0;
+    flex-wrap: wrap;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.card {
+    position: relative;
+    max-width: 300px;
+    min-height: 300px;
+    width: 90%;
+    height: 100px;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    box-shadow: 1px 12px 25px rgba(0, 0, 0, 0.78);
+    padding: 0.5rem 1rem;
+    background-clip: padding-box, border-box;
+    background-origin: border-box;
+    color: #ddd;
+    background-image: var(--card-bg-image);
+    transition: all 0.7s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.card:hover {
+    box-shadow:
+        1px 12px 25px rgba(0, 0, 0, 0.78),
+        0 0 10px var(--card-color),
+        0 0 15px var(--card-color);
+    transform: translateY(-15px) scale(1.02);
+}
+
+.card-title {
+    color: var(--card-color);
+    text-decoration: none;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+    white-space: nowrap;
+}
+
+.card-subtitle {
+    position: absolute;
+    top: 60px;
+    left: 22px;
+    right: 22px;
+    font-size: 14px;
+    text-align: justify;
+    /* Blocksatz */
+    overflow: hidden;
+    display: -webkit-box;
+    line-clamp: 4;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.card-rating {
+    position: absolute;
+    top: 180px;
+    left: 22px;
+    font-weight: bolder;
+}
+
+.card-ratingbar {
+    position: absolute;
+    top: 210px;
+    left: 22px;
+    width: calc(100% - 2*22px);
+    height: 6px;
+    background: #363636;
+    border-radius: 3px;
+}
+
+.card-ratingbarcolor {
+    position: absolute;
+    top: 210px;
+    left: 22px;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--card-color);
+    width: calc(var(--card-ratingbar-width) - 2*22px);
+}
+
+.card-pricestructure {
+    position: absolute;
+    top: 225px;
+    left: 22px;
+    font-weight: bolder;
+}
+
+.card-category {
+    position: absolute;
+    bottom: 20px;
+    right: 22px;
+    border-radius: 18px;
+    height: 36px;
+    color: white;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-weight: bold;
+    background: var(--card-color);
+    padding: 7px 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
