@@ -33,6 +33,9 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+
+    background:linear-gradient(45deg, #ffedede7, #ffe4e4e7, #ffeaeaf0),
+    url('wallpaper.jpg');
 }
 
 .title {
