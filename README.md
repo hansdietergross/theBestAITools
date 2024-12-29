@@ -12,7 +12,6 @@ An interactive website for displaying and filtering various AI tools. The applic
 - 🏷️ Category filters with color coding
 - ⭐ Rating filter
 - 📊 Sorting options (name, rating)
-- 📱 Responsive design
 - 💫 Animated card layouts
 - 📈 Live statistics
 
@@ -20,7 +19,7 @@ An interactive website for displaying and filtering various AI tools. The applic
 
 - HTML5
 - CSS3 (with Custom Properties and Flexbox)
-- JavaScript (Vanilla)
+- JavaScript
 - PapaParse for CSV processing
 - Google Fonts (Nunito & Dancing Script)
 
